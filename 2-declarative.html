@@ -1,0 +1,25 @@
+<html>
+
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Babel Script para transpilar JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/jsx">
+    // Selecionamos o elemento div com o id 'app'
+    const domNode = document.getElementById('app');
+
+    // Criamos uma raiz React associada ao elemento do DOM
+    const root = ReactDOM.createRoot(domNode);
+
+    // Renderizamos o elemento <h1> dentro da raiz
+    // React se encarrega de atualizar o DOM de forma eficiente
+    root.render(<h1>Develop. Preview. Ship.</h1>); 
+  </script>
+</body>
+
+</html>
