@@ -1,4 +1,4 @@
-import { useState } from "react";
+import LikeButton from "./like-button";
 
 /**
  * Arquivo que demonstra os conceitos básicos de React, como componentes, props e estado.
@@ -36,9 +36,6 @@ function Header({ title }) {
  *   - Um botão que, ao ser clicado, incrementa o estado `likes`.
  */
 export default function HomePage() {
-  // Inicializa o estado "likes" com o valor 0
-  const [likes, setLikes] = useState(0);
-
   // Array de nomes para a lista
   const names = [
     "Kiyotaka Ayanokoji",
@@ -46,15 +43,6 @@ export default function HomePage() {
     "Suzune Horikita",
     "Kei Karuizawa",
   ];
-
-  /**
-   * Função handleClick:
-   * - Define a ação a ser executada quando o botão é clicado.
-   * - Incrementa o estado `likes` em 1 utilizando a função `setLikes`.
-   */
-  function handleClick() {
-    setLikes(likes + 1);
-  }
 
   return (
     <div>
@@ -68,9 +56,7 @@ export default function HomePage() {
           return <li key={key}>{name}</li>;
         })}
       </ul>
-
-      {/* Renderiza o botão com a contagem de likes */}
-      <button onClick={handleClick}>Likes ({likes})</button>
+      <LikeButton />
     </div>
   );
 }
