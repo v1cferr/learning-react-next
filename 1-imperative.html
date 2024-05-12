@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1. Imperative</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script type="text/javascript">
+
+    // Seleciona o elemento div com o id 'app'
+    const app = document.getElementById('app');
+
+    // Cria um novo elemento H1
+    const header = document.createElement('h1');
+
+    // Cria um novo nó de texto para o elemento H1
+    const text = 'Develop. Preview. Ship.';
+    const headerContent = document.createTextNode(text);
+
+    // Adiciona o texto ao elemento H1
+    header.appendChild(headerContent);
+
+    // Insere o elemento H1 dentro da div
+    app.appendChild(header);
+
+  </script>
+</body>
+
+</html>
