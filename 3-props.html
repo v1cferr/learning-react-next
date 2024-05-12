@@ -1,0 +1,54 @@
+<html>
+
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/jsx">
+      // Componente Header: Recebe um título como 'prop' e o exibe dentro de um h1.
+      function Header({ title }) { 
+        console.log(`Rendering header with title: ${title}`);
+
+        return (
+          <div>
+            <h1>{title}</h1>
+            <p>Classroom of the Elite</p>
+          </div>
+        );
+      }
+
+      // Componente HomePage: Define a estrutura da página.
+      function HomePage() {
+        // Props e Arrays: Lista de nomes para exibir.
+        const names = ['Kiyotaka Ayanokoji', 'Arisu Sakayanagi', 'Suzune Horikita', 'Kei Karuizawa'];
+
+        return (
+          <div>
+            {/* Usa o componente Header, passando o título como prop */}
+            <Header title="Develop. Preview. Ship." />
+
+            <ul>
+              {/* 
+                Mapeia a lista de nomes, criando um item de lista (li) para cada nome.
+                A chave (key) é importante para o React identificar cada item de forma única. 
+              */}
+              {names.map((name, index) => {
+                const key = `item-"${name}"-${index}`;
+                console.log(`Rendering item with key: ${key}`);
+                
+                return <li key={key}>{name}</li>;
+              })}
+            </ul>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(app);
+      root.render(<HomePage />);
+    </script>
+</body>
+
+</html>
